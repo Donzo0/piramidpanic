@@ -85,7 +85,6 @@ namespace PyramidPanic
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             this.spriteBatch.Begin();
-            this.spriteBatch.Draw(this.background,new Rectangle(0,0,640,480), Color.FloralWhite);
             this.spriteBatch.End();
             
             base.Draw(gameTime);

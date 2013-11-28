@@ -11,16 +11,13 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    public class StartScene
+    public class GameOverScene
     {
         //Fields
-        public Texture2D background;
-        public SpriteBatch spriteBatch;
 
         //Constructor
-        public StartScene()
-        { 
-
+        public GameOverScene()
+        {
         }
         //Initialize
         public void Initialize()
@@ -28,17 +25,15 @@ namespace PyramidPanic
         }
         //LoadContent
         public void LoadContent()
-        { 
+        {
         }
         //Update
         public void Update()
-        { 
+        {
         }
         //Draw
-        public void Draw(ContentManager Content, SpriteBatch spriteBatch)
+        public void Draw()
         {
-            //Hier word achtergrond getekent
-            this.spriteBatch.Draw(Content.Load<Texture2D>(@"menu/background"), new Rectangle(0, 0, 640, 480), Color.FloralWhite);
         }
     }
 }

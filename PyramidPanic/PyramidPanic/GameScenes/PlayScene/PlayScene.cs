@@ -14,13 +14,12 @@ namespace PyramidPanic
     public class StartScene
     {
         //Fields
-        public Texture2D background;
-        public SpriteBatch spriteBatch;
+        private Texture2D background;
+        private SpriteBatch spriteBatch1;
 
         //Constructor
         public StartScene()
-        { 
-
+        {
         }
         //Initialize
         public void Initialize()
@@ -28,17 +27,16 @@ namespace PyramidPanic
         }
         //LoadContent
         public void LoadContent()
-        { 
+        {
         }
         //Update
         public void Update()
-        { 
+        {
         }
         //Draw
-        public void Draw(ContentManager Content, SpriteBatch spriteBatch)
+        public void Draw(ContentManager Content, SpriteBatch spriteBatch1)
         {
-            //Hier word achtergrond getekent
-            this.spriteBatch.Draw(Content.Load<Texture2D>(@"menu/background"), new Rectangle(0, 0, 640, 480), Color.FloralWhite);
+            this.spriteBatch1.Draw(Content.Load<Texture2D>(@"menu/background1"), new Rectangle(0, 0, 640, 480), Color.FloralWhite);
         }
     }
 }
