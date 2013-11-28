@@ -11,8 +11,6 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    private enum GameState
-    { Start, Play }
 
     public class PyramidPanic : Microsoft.Xna.Framework.Game
     {
@@ -23,9 +21,7 @@ namespace PyramidPanic
 
         //Keyboard voegt ie toe.
         private KeyboardState keyboardState, oldKeyboardState;
-        //GameState standaard
-        private GameState state = GameState.Start;
-        
+      
 
         //Constructor
         public PyramidPanic()
