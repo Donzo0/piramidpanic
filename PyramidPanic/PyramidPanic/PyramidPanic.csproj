@@ -16,7 +16,7 @@
     <XnaProfile>HiDef</XnaProfile>
     <XnaCrossPlatformGroupID>8f35afae-6efa-40f6-b964-6e55f3d6698b</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
-    <ApplicationIcon>Game.ico</ApplicationIcon>
+    <ApplicationIcon>pyramid.ico</ApplicationIcon>
     <Thumbnail>GameThumbnail.png</Thumbnail>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -109,11 +109,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="PyramidPanic.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
+    <Content Include="pyramid.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PyramidPanicContent\PyramidPanicContent.contentproj">
