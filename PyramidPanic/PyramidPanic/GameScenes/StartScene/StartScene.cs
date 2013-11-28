@@ -14,28 +14,32 @@ namespace PyramidPanic
     public class StartScene
     {
         //Fields
-        public Texture2D background;
-        public SpriteBatch spriteBatch;
+        private PyramidPanic game;
+        private Texture2D background;
+        private SpriteBatch spriteBatch;
 
         //Constructor
-        public StartScene()
-        { 
-
+        public StartScene(PyramidPanic game)
+        {
+            this.game = game;
+            this.Initialize();
         }
         //Initialize
         public void Initialize()
         {
+            this.LoadContent();
         }
         //LoadContent
         public void LoadContent()
-        { 
+        {
+
         }
         //Update
-        public void Update()
+        public void Update(GameTime gameTime)
         { 
         }
         //Draw
-        public void Draw(ContentManager Content, SpriteBatch spriteBatch)
+        public void Draw(ContentManager Content, SpriteBatch spriteBatch, GameTime gameTime)
         {
             //Hier word achtergrond getekent
             this.spriteBatch.Draw(Content.Load<Texture2D>(@"menu/background"), new Rectangle(0, 0, 640, 480), Color.FloralWhite);

@@ -11,14 +11,14 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    public class StartScene
+    public class PlayScene
     {
         //Fields
         private Texture2D background;
         private SpriteBatch spriteBatch1;
 
         //Constructor
-        public StartScene()
+        public PlayScene()
         {
         }
         //Initialize
