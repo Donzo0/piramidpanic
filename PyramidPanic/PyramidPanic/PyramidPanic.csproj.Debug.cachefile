@@ -15,8 +15,6 @@ Content\level\Door.xnb
 Content\explorer\Explorer.xnb
 Content\explorer\explorer_down.xnb
 Content\explorer\expvierkant.xnb
-Content\level\Help.xnb
-Content\level\HelpText.xnb
 Content\level\Lives.xnb
 Content\level\Mummy.xnb
 Content\level\overlay.xnb
@@ -30,3 +28,6 @@ Content\level\Treasure1.xnb
 Content\level\Treasure2.xnb
 Content\level\Wall1.xnb
 Content\level\Wall2.xnb
+Content\help\Help.xnb
+Content\help\HelpText.xnb
+Content\Help.xnb
