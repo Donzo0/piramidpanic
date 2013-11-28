@@ -1,0 +1,4 @@
+#dit is een file waarin je bestandstypen of hele mappen door git kunt laten negeren. met een # kan je tekst uitsluiten.
+
+**/bin/**
+**/obj/**
