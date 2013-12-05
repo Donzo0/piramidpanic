@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace PyramidPanic.GameScenes.HelpScene
+namespace PyramidPanic
 {
     public class EndScene
     {
@@ -19,7 +19,6 @@ namespace PyramidPanic.GameScenes.HelpScene
         //Constructor
         public EndScene(PyramidPanic game)
         {
-
             this.game = game;
             this.Initialize();
         }
@@ -42,7 +41,7 @@ namespace PyramidPanic.GameScenes.HelpScene
         public void Draw(GameTime gameTime)
         {
             //Hier word achtergrond getekent
-            this.game.GraphicsDevice.Clear(Color.Black);
+            this.game.GraphicsDevice.Clear(Color.Gray);
         }
     }
 

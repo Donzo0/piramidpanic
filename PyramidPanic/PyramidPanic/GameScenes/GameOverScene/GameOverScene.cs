@@ -42,7 +42,7 @@ namespace PyramidPanic
         public void Draw(GameTime gameTime)
         {
             //Hier word achtergrond getekent
-            this.game.GraphicsDevice.Clear(Color.Black);
+            this.game.GraphicsDevice.Clear(Color.Blue);
         }
     }
 }
