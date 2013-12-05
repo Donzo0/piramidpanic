@@ -36,7 +36,35 @@ namespace PyramidPanic
 
         //Keyboard voegt ie toe.
         private KeyboardState keyboardState, oldKeyboardState;
-      
+
+        #region Proppety
+        //Propetty
+        public IGameState GameState
+        {
+            get { return this.gameState; }
+            set { this.gameState = value; }
+        }
+        public StartScene StartScene
+        {
+            get { return this.startScene; }
+        }
+        public PlayScene PlayScene
+        {
+            get { return this.playScene; }
+        }
+        public HelpScene HelpScene
+        {
+            get { return this.helpScene; }
+        }
+        public GameOverScene GameOverScene
+        {
+            get { return this.gameOverScene; }
+        }
+        public EndScene EndScene
+        {
+            get { return this.endScene; }
+        } 
+        #endregion
 
         //Constructor
         public PyramidPanic()
@@ -103,17 +131,7 @@ namespace PyramidPanic
             if ((GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed) || (Keyboard.GetState().IsKeyDown(Keys.Escape)))
                 this.Exit();
 
-            //Scene's
-            //Roept de update method aan van startScene
-            this.startScene.Update(gameTime);
-            //Roept de update method aan van PlayScene
-            this.playScene.Update(gameTime);
-            //Roept de update method aan van HelpScene
-            this.helpScene.Update(gameTime);
-            //Roept de update method aan van GameOverScene
-            this.gameOverScene.Update(gameTime);
-            //Roept de update method aan van EndScene
-            this.endScene.Update(gameTime);
+            this.gameState.Update(gameTime);
 
             //Voor edgedecetion, zet de huidige keyboardstate in oude keyboardstate.
             this.oldKeyboardState = this.keyboardState;
@@ -127,17 +145,7 @@ namespace PyramidPanic
             //hier roep je begin() method aan
             this.spriteBatch.Begin();
 
-            //Scene's
-            //roep de Draw(gameTime) aan van StartScene
-            this.startScene.Draw(gameTime);
-            //roep de Draw(gameTime) aan van pPlayScene
-            this.playScene.Draw(gameTime);
-            //roep de Draw(gameTime) aan van StartScene
-            this.helpScene.Draw(gameTime);
-            //roep de Draw(gameTime) aan van pPlayScene
-            this.gameOverScene.Draw(gameTime);
-            //roep de Draw(gameTime) aan van StartScene
-            this.endScene.Draw(gameTime);
+            this.gameState.Draw(gameTime);
 
             // hier roep je end() method aan
             this.spriteBatch.End();

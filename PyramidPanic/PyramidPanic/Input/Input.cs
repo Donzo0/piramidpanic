@@ -11,11 +11,17 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    public interface IGameState
+    public static class Input
     {
-        // Van de GameState Variable in de class pyramidpanic willen aanroepen. alleen als je het in de interface aangeeft
-        void Update(GameTime gameTime);
+        //Fields
+        
+        //Keyboard voegt ie toe.
+        private static KeyboardState keyboardState, oldKeyboardState;
+        //Mouse toevoegen
+        private static MouseState ms, oms;
+        //Gamepad toevoegen
+        private static GamePadState gps, ogps;
 
-        void Draw(GameTime gameTime);
+        //Constructor
     }
 }

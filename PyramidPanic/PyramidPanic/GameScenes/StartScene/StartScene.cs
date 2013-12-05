@@ -36,7 +36,10 @@ namespace PyramidPanic
         //Update
         public void Update(GameTime gameTime)
         {
-
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            {
+                this.game.GameState = this.game.PlayScene;
+            }
         }
         //Draw
         public void Draw(GameTime gameTime)
