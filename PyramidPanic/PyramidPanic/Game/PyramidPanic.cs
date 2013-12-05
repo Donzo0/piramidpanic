@@ -31,6 +31,9 @@ namespace PyramidPanic
         // Maak een variable aan van het type EndScene
         private EndScene endScene; //Camelcase notatie
 
+        //De variable die verschilende scene-object kan bevatten. dit is een interface
+        private IGameState gameState;
+
         //Keyboard voegt ie toe.
         private KeyboardState keyboardState, oldKeyboardState;
       
@@ -79,6 +82,8 @@ namespace PyramidPanic
             this.gameOverScene = new GameOverScene(this);
             // Maakt een instantie aan van EndScene
             this.endScene = new EndScene(this);
+
+            this.gameState = this.startScene;
 
         }
 
