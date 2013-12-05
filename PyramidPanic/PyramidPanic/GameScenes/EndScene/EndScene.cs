@@ -9,31 +9,41 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace PyramidPanic
+namespace PyramidPanic.GameScenes.HelpScene
 {
     public class EndScene
     {
         //Fields
+        private PyramidPanic game;
 
         //Constructor
-        public EndScene()
+        public EndScene(PyramidPanic game)
         {
+
+            this.game = game;
+            this.Initialize();
         }
         //Initialize
         public void Initialize()
         {
+            this.LoadContent();
         }
         //LoadContent
         public void LoadContent()
         {
+
         }
         //Update
-        public void Update()
+        public void Update(GameTime gameTime)
         {
+
         }
         //Draw
-        public void Draw()
+        public void Draw(GameTime gameTime)
         {
+            //Hier word achtergrond getekent
+            this.game.GraphicsDevice.Clear(Color.Black);
         }
     }
+
 }

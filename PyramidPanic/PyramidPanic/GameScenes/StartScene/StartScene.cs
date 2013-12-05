@@ -15,12 +15,11 @@ namespace PyramidPanic
     {
         //Fields
         private PyramidPanic game;
-        private Texture2D background;
-        private SpriteBatch spriteBatch;
 
         //Constructor
         public StartScene(PyramidPanic game)
         {
+
             this.game = game;
             this.Initialize();
         }
@@ -36,13 +35,14 @@ namespace PyramidPanic
         }
         //Update
         public void Update(GameTime gameTime)
-        { 
+        {
+
         }
         //Draw
-        public void Draw(ContentManager Content, SpriteBatch spriteBatch, GameTime gameTime)
+        public void Draw(GameTime gameTime)
         {
             //Hier word achtergrond getekent
-            this.spriteBatch.Draw(Content.Load<Texture2D>(@"menu/background"), new Rectangle(0, 0, 640, 480), Color.FloralWhite);
+            this.game.GraphicsDevice.Clear(Color.Black);
         }
     }
 }

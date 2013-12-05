@@ -13,27 +13,36 @@ namespace PyramidPanic
 {
     public class GameOverScene
     {
-        //Fields
+       //Fields
+        private PyramidPanic game;
 
         //Constructor
-        public GameOverScene()
+        public GameOverScene(PyramidPanic game)
         {
+
+            this.game = game;
+            this.Initialize();
         }
         //Initialize
         public void Initialize()
         {
+            this.LoadContent();
         }
         //LoadContent
         public void LoadContent()
         {
+
         }
         //Update
-        public void Update()
+        public void Update(GameTime gameTime)
         {
+
         }
         //Draw
-        public void Draw()
+        public void Draw(GameTime gameTime)
         {
+            //Hier word achtergrond getekent
+            this.game.GraphicsDevice.Clear(Color.Black);
         }
     }
 }

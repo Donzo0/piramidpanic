@@ -19,6 +19,11 @@ namespace PyramidPanic
         private SpriteBatch spriteBatch;
         private Texture2D background;
 
+        // Maak een variable aan van het type StartScene
+        private StartScene startScene; //Camelcase notatie
+        // Maak een variable aan van het type PlayScene
+        private PlayScene playScene; //Camelcase notatie
+
         //Keyboard voegt ie toe.
         private KeyboardState keyboardState, oldKeyboardState;
       
@@ -55,14 +60,18 @@ namespace PyramidPanic
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             this.spriteBatch = new SpriteBatch(GraphicsDevice);
-            this.background = Content.Load<Texture2D>(@"menu/Background");
-            
+
+            // Maakt een instantie aan van StartScene
+            this.startScene = new StartScene(this);
+
+            // Maakt een instantie aan van playScene
+            this.playScene = new PlayScene(this);
         }
 
 
         protected override void UnloadContent()
         {
-            
+           
         }
 
         
@@ -75,6 +84,11 @@ namespace PyramidPanic
             if ((GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed) || (Keyboard.GetState().IsKeyDown(Keys.Escape)))
                 this.Exit();
 
+            //Roept de update method aan van startScene
+            this.startScene.Update(gameTime);
+            //Roept de update method aan van PlayScene
+            this.playScene.Update(gameTime);
+
             //Voor edgedecetion, zet de huidige keyboardstate in oude keyboardstate.
             this.oldKeyboardState = this.keyboardState;
             base.Update(gameTime);
@@ -84,7 +98,15 @@ namespace PyramidPanic
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            //hier roep je begin() method aan
             this.spriteBatch.Begin();
+
+            //roep de Draw(gameTime) aan van StartScene
+            this.startScene.Draw(gameTime);
+            //roep de Draw(gameTime) aan van pPlayScene
+            this.playScene.Draw(gameTime);
+
+            // hier roep je end() method aan
             this.spriteBatch.End();
             
             base.Draw(gameTime);

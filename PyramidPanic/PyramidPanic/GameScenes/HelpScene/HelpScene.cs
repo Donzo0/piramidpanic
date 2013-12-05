@@ -9,16 +9,17 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace PyramidPanic
+namespace PyramidPanic.GameScenes.HelpScene
 {
-    public class PlayScene
+    public class HelpScene
     {
         //Fields
         private PyramidPanic game;
 
         //Constructor
-        public PlayScene(PyramidPanic game)
+        public HelpScene(PyramidPanic game)
         {
+
             this.game = game;
             this.Initialize();
         }
@@ -30,14 +31,19 @@ namespace PyramidPanic
         //LoadContent
         public void LoadContent()
         {
+
         }
         //Update
         public void Update(GameTime gameTime)
         {
+
         }
         //Draw
         public void Draw(GameTime gameTime)
         {
+            //Hier word achtergrond getekent
+            this.game.GraphicsDevice.Clear(Color.Black);
         }
     }
+    
 }
