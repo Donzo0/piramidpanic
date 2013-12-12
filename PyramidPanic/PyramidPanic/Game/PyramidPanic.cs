@@ -37,7 +37,7 @@ namespace PyramidPanic
         //Keyboard voegt ie toe.
         private KeyboardState keyboardState, oldKeyboardState;
 
-        #region Proppety
+        #region Propperty
         //Propetty
         public IGameState GameState
         {
@@ -63,7 +63,11 @@ namespace PyramidPanic
         public EndScene EndScene
         {
             get { return this.endScene; }
-        } 
+        }
+        public SpriteBatch SpriteBatch
+        {
+            get { return this.spriteBatch; }
+        }
         #endregion
 
         //Constructor

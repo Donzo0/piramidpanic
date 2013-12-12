@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="GameScenes\EndScene\EndScene.cs" />
     <Compile Include="GameScenes\GameOverScene\GameOverScene.cs" />
+    <Compile Include="GameScenes\HelperClasses\Image.cs" />
     <Compile Include="GameScenes\HelpScene\HelpScene.cs" />
     <Compile Include="GameScenes\PlayScene\PlayScene.cs" />
     <Compile Include="GameScenes\StartScene\StartScene.cs" />
