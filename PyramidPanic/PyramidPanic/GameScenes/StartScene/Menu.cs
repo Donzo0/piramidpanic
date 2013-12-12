@@ -16,7 +16,11 @@ namespace PyramidPanic
         #region Fiels
         private PyramidPanic game;
         //Button Fiels
-        private Image startButton, helpButton, loadButton, scoreButton, quitButton;
+        private Image startButton, loadButton, helpButton, scoreButton, quitButton;
+        // int voor menu
+        private int top = 440, left = 10, space = 130;
+        //List object om buttons in te stoppen
+        private List<Image> buttonList;
         #endregion
 
         #region Properties
@@ -41,7 +45,22 @@ namespace PyramidPanic
         #region LoadContent
         public void LoadContent()
         {
-            this.startButton = new Image(this.game, @"menu\Button_start", new Vector2(10f, 440f));
+
+
+            this.startButton = new Image(this.game, @"menu\Button_start", new Vector2(this.left, this.top));
+            this.loadButton = new Image(this.game, @"menu\Button_load", new Vector2(this.left + this.space, this.top));
+            this.helpButton = new Image(this.game, @"menu\Button_help", new Vector2(this.left + 2 * this.space, this.top));
+            this.scoreButton = new Image(this.game, @"menu\Button_scores", new Vector2(this.left + 3 * this.space, this.top));
+            this.quitButton = new Image(this.game, @"menu\Button_quit", new Vector2(this.left + 4 * this.space, this.top));
+
+            //Maak een nieuw object van he ttype List <Image>
+            this.buttonList = new List<Image>();
+            // Voeg een Image object toe aan de List<Image> Genaamd this.buttonList
+            this.buttonList.Add(this.startButton);
+            this.buttonList.Add(this.loadButton);
+            this.buttonList.Add(this.helpButton);
+            this.buttonList.Add(this.scoreButton);
+            this.buttonList.Add(this.quitButton);
         }
         #endregion
 
@@ -52,7 +71,11 @@ namespace PyramidPanic
         #region Draw
         public void Draw(GameTime gameTime)
         {
-            this.startButton.Draw(gameTime); 
+            this.startButton.Draw(gameTime);
+            this.loadButton.Draw(gameTime);
+            this.helpButton.Draw(gameTime);
+            this.scoreButton.Draw(gameTime);
+            this.quitButton.Draw(gameTime); 
         }
         #endregion
     }
