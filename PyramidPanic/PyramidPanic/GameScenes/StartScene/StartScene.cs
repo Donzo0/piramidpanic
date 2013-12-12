@@ -45,10 +45,8 @@ namespace PyramidPanic
         //Update
         public void Update(GameTime gameTime)
         {
-            if (Input.EdgeDetectKeyDown(Keys.Right))
-            {
-                this.game.GameState = this.game.PlayScene;
-            }
+            //Hiermee roep je de update method van menu op
+            this.menu.Update(gameTime);
         }
         //Draw
         public void Draw(GameTime gameTime)

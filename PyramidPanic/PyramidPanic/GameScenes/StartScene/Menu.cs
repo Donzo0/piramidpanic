@@ -14,6 +14,11 @@ namespace PyramidPanic
     public class Menu
     {
         #region Fiels
+        //Hier word ene nieuw soort variable gedefineerd. Het is een enum.
+        private enum Button { Start, Load, Help, Score, Quit }
+        //Hier word de variable aangemaakt van button. deze variable kan maae 5 waardes aannemen.
+        private Button buttonState = Button.Start;
+        //Game variable
         private PyramidPanic game;
         //Button Fiels
         private Image startButton, loadButton, helpButton, scoreButton, quitButton;
@@ -21,6 +26,10 @@ namespace PyramidPanic
         private int top = 433, left = 10, space = 130;
         //List object om buttons in te stoppen
         private List<Image> buttonList;
+        //Color voor button
+        private Color color = Color.Gold;
+        //Keyboard voegt ie toe.
+        private KeyboardState keyboardState, oldKeyboardState;
         #endregion
 
         #region Properties
@@ -52,7 +61,7 @@ namespace PyramidPanic
             this.helpButton = new Image(this.game, @"menu\Button_help", new Vector2(this.left + 2 * this.space, this.top));
             this.scoreButton = new Image(this.game, @"menu\Button_scores", new Vector2(this.left + 3 * this.space, this.top));
             this.quitButton = new Image(this.game, @"menu\Button_quit", new Vector2(this.left + 4 * this.space, this.top));
-
+           // this.startButton
             //Maak een nieuw object van he ttype List <Image>
             this.buttonList = new List<Image>();
             // Voeg een Image object toe aan de List<Image> Genaamd this.buttonList
@@ -65,7 +74,58 @@ namespace PyramidPanic
         #endregion
 
         #region Update
+        public void Update(GameTime gameTime)
+        {
+                if (Input.EdgeDetectKeyDown(Keys.Right))
+                {
+                    if (this.buttonState < Button.Quit)
+                    {
+                        foreach (Image button in this.buttonList)
+                        {
+                            button.Color = Color.White;
+                        }
+                        this.buttonState++;
+                    }
+                }
+            
+            if (Input.EdgeDetectKeyDown(Keys.Left))
+            {
+                if (this.buttonState < Button.Quit)
+                {
+                    foreach (Image button in this.buttonList)
+                    {
+                        button.Color = Color.White;
+                    }
+                    this.buttonState--;
+                }
+            }
 
+            switch (this.buttonState)
+            {
+                case Button.Start:
+                    this.startButton.Color = this.color;
+                    if (this.keyboardState.IsKeyDown(Keys.Enter)
+                    {
+
+                    }
+                    break;
+                case Button.Load:
+                    this.loadButton.Color = this.color;
+                    break;
+                case Button.Help:
+                    this.helpButton.Color = this.color;
+                    break;
+                case Button.Score:
+                    this.scoreButton.Color = this.color;
+                    break;
+                case Button.Quit:
+                    this.quitButton.Color = this.color;
+                    break;
+                default:
+                    break;
+            }
+            
+        }
         #endregion
 
         #region Draw
