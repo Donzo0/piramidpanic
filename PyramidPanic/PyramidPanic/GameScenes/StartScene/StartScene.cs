@@ -15,6 +15,8 @@ namespace PyramidPanic
     {
         //Fields
         private PyramidPanic game;
+
+        // Fields voor de startScene
         private Image background,backTitle;
 
         //Constructor
@@ -33,7 +35,7 @@ namespace PyramidPanic
         public void LoadContent()
         {
             this.background = new Image(this.game,@"menu\Background", new Vector2(0f, 0f));
-            this.backTitle = new Image(this.game, @"menu\Title", new Vector2(50f, 200f));
+            this.backTitle = new Image(this.game, @"menu\Title", new Vector2(100f, 30f));
         }
         //Update
         public void Update(GameTime gameTime)
