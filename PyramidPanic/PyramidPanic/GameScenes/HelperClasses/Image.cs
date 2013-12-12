@@ -18,10 +18,15 @@ namespace PyramidPanic
         private Texture2D texture;
         private Rectangle rectangle;
         private PyramidPanic game;
+        //We maken hier ee variable aan van het type Color waarin we het een waarde kunnen geven
+        private Color color = Color.FloralWhite;
         #endregion
 
         #region Properties
-
+        public Color Color
+        { 
+            set { this.color = value; }
+        }
         #endregion
 
         #region Constructor

@@ -18,7 +18,7 @@ namespace PyramidPanic
         //Button Fiels
         private Image startButton, loadButton, helpButton, scoreButton, quitButton;
         // int voor menu
-        private int top = 440, left = 10, space = 130;
+        private int top = 433, left = 10, space = 130;
         //List object om buttons in te stoppen
         private List<Image> buttonList;
         #endregion
@@ -46,7 +46,7 @@ namespace PyramidPanic
         public void LoadContent()
         {
 
-
+            //Button worden hier aangemaakt
             this.startButton = new Image(this.game, @"menu\Button_start", new Vector2(this.left, this.top));
             this.loadButton = new Image(this.game, @"menu\Button_load", new Vector2(this.left + this.space, this.top));
             this.helpButton = new Image(this.game, @"menu\Button_help", new Vector2(this.left + 2 * this.space, this.top));
@@ -71,11 +71,10 @@ namespace PyramidPanic
         #region Draw
         public void Draw(GameTime gameTime)
         {
-            this.startButton.Draw(gameTime);
-            this.loadButton.Draw(gameTime);
-            this.helpButton.Draw(gameTime);
-            this.scoreButton.Draw(gameTime);
-            this.quitButton.Draw(gameTime); 
+            foreach (Image button in this.buttonList)
+            {
+                button.Draw(gameTime);
+            }
         }
         #endregion
     }
