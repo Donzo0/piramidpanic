@@ -36,6 +36,7 @@ namespace PyramidPanic
         public void Update(GameTime gameTime)
         {
 
+
         }
         //Draw
         public void Draw(GameTime gameTime)

@@ -131,6 +131,9 @@ namespace PyramidPanic
             if ((GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed) || (Keyboard.GetState().IsKeyDown(Keys.Escape)))
                 this.Exit();
 
+            // Roep de Update method aan van de Input class
+            Input.Update();
+
             this.gameState.Update(gameTime);
 
             //Voor edgedecetion, zet de huidige keyboardstate in oude keyboardstate.
