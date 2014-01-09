@@ -31,6 +31,7 @@ namespace PyramidPanic
         {
             keyboardState = Keyboard.GetState();
             ms = Mouse.GetState();
+            mouseRect = new Rectangle(ms.X, ms.Y, 1, 1);
         }
 
         public static void Update()
@@ -46,6 +47,19 @@ namespace PyramidPanic
         public static bool EdgeDetectKeyDown(Keys key)
         {
             return (keyboardState.IsKeyDown(key) && oldKeyboardState.IsKeyUp(key));
+        }
+
+        // Dit is de edgeDetector voor de linker muisknop.
+        public static bool EdgeDetectMousePressLeft()
+        {
+            return (ms.LeftButton == ButtonState.Pressed) && (oms.LeftButton == ButtonState.Released);
+        }
+
+        public static Rectangle MouseRect()
+        {
+            mouseRect.X = ms.X;
+            mouseRect.Y = ms.Y;
+            return mouseRect;
         }
 
     }

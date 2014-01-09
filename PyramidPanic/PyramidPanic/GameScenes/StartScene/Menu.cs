@@ -76,7 +76,19 @@ namespace PyramidPanic
         #region Update
         public void Update(GameTime gameTime)
         {
-                if (Input.EdgeDetectKeyDown(Keys.Right))
+            //MouseDetection Voor HelpButton
+            if (this.helpButton.Rectangle.Intersects(Input.MouseRect()))
+            {
+                if (Input.EdgeDetectMousePressLeft())
+                {
+                    this.game.GameState = this.game.HelpScene;
+                }
+                this.buttonState = Button.Help;
+                this.ChangeButtinColoerToNormal();
+            }
+
+
+             if (Input.EdgeDetectKeyDown(Keys.Right))
                 {
                     if (this.buttonState < Button.Quit)
                     {
@@ -153,5 +165,14 @@ namespace PyramidPanic
             }
         }
         #endregion
+
+        //HelperMethod
+        private void ChangeButtinColoerToNormal()
+        {
+            foreach (Image button in this.buttonList)
+            {
+                button.Color = Color.White;
+            }
+        }
     }
 }
