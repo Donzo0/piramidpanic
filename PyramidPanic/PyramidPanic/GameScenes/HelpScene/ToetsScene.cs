@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace PyramidPanic.GameScenes.HelpScene
+namespace PyramidPanic
 {
     public class ToetsScene : IGameState
     {
@@ -42,7 +42,7 @@ namespace PyramidPanic.GameScenes.HelpScene
         //Draw
         public void Draw(GameTime gameTime)
         {
-            this.game.GraphicsDevice.Clear(Color.Red);
+            this.game.GraphicsDevice.Clear(Color.CornflowerBlue);
         }
     }
 }

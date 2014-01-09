@@ -78,7 +78,7 @@ namespace PyramidPanic
         {
               EdgeDetectMousePressLeft(this.startButton, this.game.PlayScene, Button.Start);
               EdgeDetectMousePressLeft(this.loadButton, this.game.LoadScene, Button.Load);
-              EdgeDetectMousePressLeft(this.helpButton, this.game.HelpScene, Button.Help);
+              EdgeDetectMousePressLeft(this.helpButton, this.game.ToetsScene, Button.Help);
               EdgeDetectMousePressLeft(this.scoreButton, this.game.ScoreScene, Button.Score);
               EdgeDetectMousePressLeft(this.quitButton, this.game.EndScene, Button.Quit);
 
@@ -136,7 +136,7 @@ namespace PyramidPanic
                     this.helpButton.Color = this.color;
                     if (Input.EdgeDetectKeyDown(Keys.Enter))
                     {
-                        this.game.GameState = this.game.HelpScene;
+                        this.game.GameState = this.game.ToetsScene;
                     }
                     break;
                 case Button.Score:

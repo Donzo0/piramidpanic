@@ -112,6 +112,7 @@
     <Compile Include="GameScenes\GameOverScene\GameOverScene.cs" />
     <Compile Include="GameScenes\HelperClasses\Image.cs" />
     <Compile Include="GameScenes\HelpScene\HelpScene.cs" />
+    <Compile Include="GameScenes\HelpScene\ToetsScene.cs" />
     <Compile Include="GameScenes\LoadScene\LoadScene.cs" />
     <Compile Include="GameScenes\PlayScene\PlayScene.cs" />
     <Compile Include="GameScenes\ScoreScene\ScoreScene.cs" />
