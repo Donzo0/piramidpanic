@@ -15,6 +15,7 @@ namespace PyramidPanic
     {
         //Fields
         private PyramidPanic game;
+        private int timer = 0;
 
         //Constructor
         public EndScene(PyramidPanic game)
@@ -35,10 +36,11 @@ namespace PyramidPanic
         //Update
         public void Update(GameTime gameTime)
         {
-            if (Input.EdgeDetectKeyDown(Keys.B))
+            if (timer >= 50)
             {
-                this.game.GameState = this.game.StartScene;
+                this.game.Exit();
             }
+             timer++;
         }
         //Draw
         public void Draw(GameTime gameTime)

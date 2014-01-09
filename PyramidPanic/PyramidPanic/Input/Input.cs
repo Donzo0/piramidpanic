@@ -22,17 +22,23 @@ namespace PyramidPanic
         //Gamepad toevoegen
         private static GamePadState gps, ogps;
 
+        // Maak een rectengle aan voor de Mouse 
+        private static Rectangle mouseRect;
+
         //Constructor van een static class mag geen excesmodifier (private, public, protected)
         //krijgen.
         static Input()
         {
             keyboardState = Keyboard.GetState();
+            ms = Mouse.GetState();
         }
 
         public static void Update()
         {
             oldKeyboardState = keyboardState;
+            oms = ms;
             keyboardState = Keyboard.GetState();
+            ms = Mouse.GetState();
         }
 
 
