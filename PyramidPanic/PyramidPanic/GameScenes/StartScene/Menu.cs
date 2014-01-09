@@ -76,75 +76,13 @@ namespace PyramidPanic
         #region Update
         public void Update(GameTime gameTime)
         {
-            //MouseDetection Voor StartButton
-            if (this.startButton.Rectangle.Intersects(Input.MouseRect()))
-            {
-                //Als de Linker muis word ingedrukt
-                if (Input.EdgeDetectMousePressLeft())
-                {
-                    this.game.GameState = this.game.PlayScene;
-                }
-                //Geeft aan welke button state het is
-                this.buttonState = Button.Start;
-                //Verwijst naar ChangeButtonColorToNormal
-                this.ChangeButtonColorToNormal();
-            }
+              EdgeDetectMousePressLeft(this.startButton, this.game.PlayScene, Button.Start);
+              EdgeDetectMousePressLeft(this.loadButton, this.game.LoadScene, Button.Load);
+              EdgeDetectMousePressLeft(this.helpButton, this.game.HelpScene, Button.Help);
+              EdgeDetectMousePressLeft(this.scoreButton, this.game.ScoreScene, Button.Score);
+              EdgeDetectMousePressLeft(this.quitButton, this.game.EndScene, Button.Quit);
 
-            //MouseDetection Voor loadButton
-            if (this.loadButton.Rectangle.Intersects(Input.MouseRect()))
-            {
-                //Als de Linker muis word ingedrukt
-                if (Input.EdgeDetectMousePressLeft())
-                {
-                    this.game.GameState = this.game.LoadScene;
-                }
-                //Geeft aan welke button state het is
-                this.buttonState = Button.Load;
-                //Verwijst naar ChangeButtonColorToNormal
-                this.ChangeButtonColorToNormal();
-            }
-
-            //MouseDetection Voor HelpButton
-            if (this.helpButton.Rectangle.Intersects(Input.MouseRect()))
-            {   
-                //Als de Linker muis word ingedrukt
-                if (Input.EdgeDetectMousePressLeft())
-                {
-                    this.game.GameState = this.game.HelpScene;
-                }
-                //Geeft aan welke button state het is
-                this.buttonState = Button.Help;
-                //Verwijst naar ChangeButtonColorToNormal
-                this.ChangeButtonColorToNormal();
-            }
-
-            //MouseDetection Voor ScoreButton
-            if (this.scoreButton.Rectangle.Intersects(Input.MouseRect()))
-            {
-                //Als de Linker muis word ingedrukt
-                if (Input.EdgeDetectMousePressLeft())
-                {
-                    this.game.GameState = this.game.ScoreScene;
-                }
-                //Geeft aan welke button state het is
-                this.buttonState = Button.Score;
-                //Verwijst naar ChangeButtonColorToNormal
-                this.ChangeButtonColorToNormal();
-            }
-
-            //MouseDetection Voor quitButton
-            if (this.quitButton.Rectangle.Intersects(Input.MouseRect()))
-            {
-                //Als de Linker muis word ingedrukt
-                if (Input.EdgeDetectMousePressLeft())
-                {
-                    this.game.GameState = this.game.EndScene;
-                }
-                //Geeft aan welke button state het is
-                this.buttonState = Button.Quit;
-                //Verwijst naar ChangeButtonColorToNormal
-                this.ChangeButtonColorToNormal();
-            }
+            
 
              // Als de right knop wordt ingedrukt....
              if (Input.EdgeDetectKeyDown(Keys.Right))
@@ -232,12 +170,25 @@ namespace PyramidPanic
         }
         #endregion
 
-        //HelperMethod
-        private void ChangeButtonColorToNormal()
-        {
-            foreach (Image button in this.buttonList)
+
+        //MOude Detection help Method
+        private void EdgeDetectMousePressLeft(Image image, IGameState gameState, Button buttonState)
+        { 
+            // Hier word de juiste button gekozen
+            if (image.Rectangle.Intersects(Input.MouseRect()))
             {
-                button.Color = Color.White;
+                //Als de Linker muis word ingedrukt
+                if (Input.EdgeDetectMousePressLeft())
+                {
+                    this.game.GameState = gameState;
+                }
+                //Geeft aan welke button state het is
+                this.buttonState = buttonState;
+                // Button word met wit licht beschenen
+                foreach (Image button in this.buttonList)
+                {
+                    button.Color = Color.White;
+                }
             }
         }
     }
