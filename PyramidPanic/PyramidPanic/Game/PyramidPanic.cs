@@ -23,8 +23,12 @@ namespace PyramidPanic
         private StartScene startScene; //Camelcase notatie
         // Maak een variable aan van het type PlayScene
         private PlayScene playScene; //Camelcase notatie
+        // Maak een variable aan van het type LoadScene
+        private LoadScene loadScene; //Camelcase notatie
         // Maak een variable aan van het type HelpScene
         private HelpScene helpScene; //Camelcase notatie
+        // Maak een variable aan van het type ScoreScene
+        private ScoreScene scoreScene; //Camelcase notatie
         // Maak een variable aan van het type GameOverScene
         private GameOverScene gameOverScene; //Camelcase notatie
         // Maak een variable aan van het type EndScene
@@ -51,9 +55,17 @@ namespace PyramidPanic
         {
             get { return this.playScene; }
         }
+        public LoadScene LoadScene
+        {
+            get { return this.loadScene; }
+        }
         public HelpScene HelpScene
         {
             get { return this.helpScene; }
+        }
+        public ScoreScene ScoreScene
+        {
+            get { return this.scoreScene; }
         }
         public GameOverScene GameOverScene
         {
@@ -107,8 +119,12 @@ namespace PyramidPanic
             this.startScene = new StartScene(this);
             // Maakt een instantie aan van playScene
             this.playScene = new PlayScene(this);
+            // Maakt een instantie aan van LoadScene
+            this.loadScene = new LoadScene(this);
             // Maakt een instantie aan van HelpScene
             this.helpScene = new HelpScene(this);
+            // Maakt een instantie aan van playScene
+            this.scoreScene = new ScoreScene(this);
             // Maakt een instantie aan van GameOverScene
             this.gameOverScene = new GameOverScene(this);
             // Maakt een instantie aan van EndScene
