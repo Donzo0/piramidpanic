@@ -57,7 +57,7 @@ namespace PyramidPanic
 
             //Button worden hier aangemaakt
             this.startButton = new Image(this.game, @"menu\Button_start", new Vector2(this.left, this.top));
-            this.loadButton = new Image(this.game, @"menu\Button_load", new Vector2(this.left + this.space, this.top));
+            this.loadButton = new Image(this.game, @"menu\Button_load", new Vector2(this.left +  this.space, this.top));
             this.helpButton = new Image(this.game, @"menu\Button_help", new Vector2(this.left + 2 * this.space, this.top));
             this.scoreButton = new Image(this.game, @"menu\Button_scores", new Vector2(this.left + 3 * this.space, this.top));
             this.quitButton = new Image(this.game, @"menu\Button_quit", new Vector2(this.left + 4 * this.space, this.top));
@@ -90,7 +90,7 @@ namespace PyramidPanic
             
             if (Input.EdgeDetectKeyDown(Keys.Left))
             {
-                if (this.buttonState < Button.Quit)
+                if (this.buttonState > Button.Start)
                 {
                     foreach (Image button in this.buttonList)
                     {
@@ -104,22 +104,38 @@ namespace PyramidPanic
             {
                 case Button.Start:
                     this.startButton.Color = this.color;
-                    if (this.keyboardState.IsKeyDown(Keys.Enter)
+                    if (Input.EdgeDetectKeyDown(Keys.Enter))
                     {
-
+                        this.game.GameState = this.game.PlayScene;
                     }
                     break;
                 case Button.Load:
                     this.loadButton.Color = this.color;
+                    if (Input.EdgeDetectKeyDown(Keys.Enter))
+                    {
+                        this.game.GameState = this.game.PlayScene;
+                    }
                     break;
                 case Button.Help:
                     this.helpButton.Color = this.color;
+                    if (Input.EdgeDetectKeyDown(Keys.Enter))
+                    {
+                        this.game.GameState = this.game.HelpScene;
+                    }
                     break;
                 case Button.Score:
                     this.scoreButton.Color = this.color;
+                    if (Input.EdgeDetectKeyDown(Keys.Enter))
+                    {
+                        this.game.GameState = this.game.PlayScene;
+                    }
                     break;
                 case Button.Quit:
                     this.quitButton.Color = this.color;
+                    if (Input.EdgeDetectKeyDown(Keys.Enter))
+                    {
+                        this.game.Exit();
+                    }
                     break;
                 default:
                     break;
