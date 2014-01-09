@@ -35,14 +35,16 @@ namespace PyramidPanic
         //Update
         public void Update(GameTime gameTime)
         {
-
-
+            if (Input.EdgeDetectKeyDown(Keys.B))
+            {
+                this.game.GameState = this.game.StartScene;
+            }
         }
         //Draw
         public void Draw(GameTime gameTime)
         {
             //Hier word achtergrond getekent
-            this.game.GraphicsDevice.Clear(Color.Gray);
+            this.game.GraphicsDevice.Clear(Color.PapayaWhip);
         }
     }
 
