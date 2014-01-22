@@ -15,6 +15,7 @@ namespace PyramidPanic
     {
         //Fields
         private PyramidPanic game;
+        private Beetle beetle;
 
         //Constructor
         public PlayScene(PyramidPanic game)
@@ -30,6 +31,7 @@ namespace PyramidPanic
         //LoadContent
         public void LoadContent()
         {
+            this.beetle = new Beetle(this.game, new Vector2(200f, 300f));
         }
         //Update
         public void Update(GameTime gameTime)
@@ -38,11 +40,13 @@ namespace PyramidPanic
             {
                 this.game.GameState = this.game.StartScene;
             }
+            this.beetle.Update(gameTime);
         }
         //Draw
         public void Draw(GameTime gameTime)
         {
             this.game.GraphicsDevice.Clear(Color.Red);
+            this.beetle.Draw(gameTime);
         }
     }
 }
