@@ -17,7 +17,7 @@ namespace PyramidPanic
         private Vector2 position;
         private int speed = 2;
         private PyramidPanic game;
-        private IBeetleState state;
+        private IEntityState state;
         private Texture2D texture;
         private WalkUp walkUp;
         private WalkDown walkDown;
@@ -36,7 +36,7 @@ namespace PyramidPanic
         {
             get { return this.speed; }
         }
-        public IBeetleState State
+        public IEntityState State
         {
             get { return this.state; }
             set { this.state = value; }
@@ -56,11 +56,12 @@ namespace PyramidPanic
 
 
         // Maak de constructor
-        public Beetle(PyramidPanic game, Vector2 position)
+        public Beetle(PyramidPanic game, Vector2 position, int Speed)
         {
             this.position = position;
             this.game = game;
             this.texture = this.game.Content.Load<Texture2D>(@"level\Beetle");
+            this.speed = speed;
             this.walkDown = new WalkDown(this);
             this.walkUp = new WalkUp(this);
             this.state = this.walkDown;

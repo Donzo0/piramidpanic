@@ -16,6 +16,7 @@ namespace PyramidPanic
     {
         // Fields
         private Scorpion scorpion;
+        private Vector2 velocity;
 
 
         // Constructor van deze toestands class krijgt altijd het object mee
@@ -23,6 +24,7 @@ namespace PyramidPanic
         public WalkLeft(Scorpion scorpion) : base(scorpion)
         {
             this.scorpion = scorpion;
+            this.velocity = new Vector2(this.scorpion.Speed, 0f);
             this.effect = SpriteEffects.FlipHorizontally;
         }
 
@@ -39,7 +41,7 @@ namespace PyramidPanic
                 this.scorpion.State = this.scorpion.WalkRight;
                 this.scorpion.WalkRight.Initialize();
             }
-            this.scorpion.Position -= new Vector2(this.scorpion.Speed, 0f);
+            this.scorpion.Position -= this.velocity;
             base.Update(gameTime);
         }
 

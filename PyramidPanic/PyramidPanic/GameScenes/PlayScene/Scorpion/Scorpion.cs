@@ -56,11 +56,12 @@ namespace PyramidPanic
 
 
         // Maak de constructor
-        public Scorpion(PyramidPanic game, Vector2 position)
+        public Scorpion(PyramidPanic game, Vector2 position, int Speed)
         {
             this.position = position;
             this.game = game;
             this.texture = this.game.Content.Load<Texture2D>(@"level\Scorpion");
+            this.speed = speed;
             this.walkRight = new WalkRight(this);
             this.walkLeft = new WalkLeft(this);
             this.state = this.walkRight;
