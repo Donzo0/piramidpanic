@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    public class Scorpion : IAnimatedSprite
+    public class Explorer : IAnimatedSprite
     {
         // Fields
         private Vector2 position;
@@ -19,8 +19,7 @@ namespace PyramidPanic
         private PyramidPanic game;
         private IEntityState state;
         private Texture2D texture;
-        private WalkLeft walkLeft;
-        private WalkRight walkRight;
+        private ExplorerIdle idle;
 
         // Properties
         public Vector2 Position
@@ -45,26 +44,21 @@ namespace PyramidPanic
         {
             get { return this.texture; }
         }
-        public WalkRight WalkRight
+        public ExplorerIdle ExplorerIdle
         {
-            get { return this.walkRight; }
+            get { return this.idle; }
         }
-        public WalkLeft WalkLeft
-        {
-            get { return this.walkLeft; }
-        }
-
 
         // Maak de constructor
-        public Scorpion(PyramidPanic game, Vector2 position, int Speed)
+        public Explorer(PyramidPanic game, Vector2 position, int Speed)
         {
             this.position = position;
             this.game = game;
-            this.texture = this.game.Content.Load<Texture2D>(@"level\Scorpion");
+            this.texture = this.game.Content.Load<Texture2D>(@"explorer\Explorer");
             this.speed = speed;
-            this.walkRight = new WalkRight(this);
-            this.walkLeft = new WalkLeft(this);
-            this.state = this.walkRight;
+            this.idle = new ExplorerIdle(this);
+            this.state = this.idle;
+
         }
 
         public void Update(GameTime gameTime)

@@ -117,11 +117,12 @@
     <Compile Include="GameScenes\PlayScene\AnimatedSprite\AnimatedSprite.cs" />
     <Compile Include="GameScenes\PlayScene\AnimatedSprite\IAnimatedSprite.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\Beetle.cs" />
-    <Compile Include="GameScenes\PlayScene\Beetle\IEntityState.cs" />
+    <Compile Include="GameScenes\PlayScene\Explorer\Explorer.cs" />
+    <Compile Include="GameScenes\PlayScene\Explorer\ExplorerIdle.cs" />
+    <Compile Include="GameScenes\PlayScene\IEntityState.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\WalkDown.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\WalkUp.cs" />
     <Compile Include="GameScenes\PlayScene\PlayScene.cs" />
-    <Compile Include="GameScenes\PlayScene\Scorpion\IScorpionState.cs" />
     <Compile Include="GameScenes\PlayScene\Scorpion\Scorpion.cs" />
     <Compile Include="GameScenes\PlayScene\Scorpion\WalkLeft.cs" />
     <Compile Include="GameScenes\PlayScene\Scorpion\WalkRight.cs" />

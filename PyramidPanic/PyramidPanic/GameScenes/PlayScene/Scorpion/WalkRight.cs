@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 namespace PyramidPanic
 {
     // Dit is de toestands class van de Beetle    
-    public class WalkRight : AnimatedSprite, IScorpionState
+    public class WalkRight : AnimatedSprite, IEntityState
     {
         // Fields
         private Scorpion scorpion;
