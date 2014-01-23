@@ -117,6 +117,8 @@
     <Compile Include="GameScenes\PlayScene\AnimatedSprite\AnimatedSprite.cs" />
     <Compile Include="GameScenes\PlayScene\AnimatedSprite\IAnimatedSprite.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\Beetle.cs" />
+    <Compile Include="GameScenes\PlayScene\Explorer\ExplorerWalkUp.cs" />
+    <Compile Include="GameScenes\PlayScene\Explorer\ExplorerWalkDown.cs" />
     <Compile Include="GameScenes\PlayScene\Explorer\Explorer.cs" />
     <Compile Include="GameScenes\PlayScene\Explorer\ExplorerIdle.cs" />
     <Compile Include="GameScenes\PlayScene\Explorer\ExplorerWalkLeft.cs" />

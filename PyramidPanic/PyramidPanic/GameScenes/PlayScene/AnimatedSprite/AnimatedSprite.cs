@@ -19,7 +19,14 @@ namespace PyramidPanic
         protected SpriteEffects effect = SpriteEffects.None;
         private float timer = 0f;
         protected int imageNumber = 0;
+        protected float rotation = 0f;
+        private Vector2 orgin = new Vector2(16f, 16f);
 
+        //Propeties
+        public float Rotation
+        {
+            set { this.rotation = value; }
+        }
 
         // Constructor
         public AnimatedSprite(IAnimatedSprite iAnimatedSprite)
@@ -62,8 +69,8 @@ namespace PyramidPanic
                                               this.destinationRect,
                                               this.sourceRect,
                                               Color.White,
-                                              0f,
-                                              Vector2.Zero,
+                                              this.rotation,
+                                              this.orgin,
                                               this.effect,
                                               0f);
         }

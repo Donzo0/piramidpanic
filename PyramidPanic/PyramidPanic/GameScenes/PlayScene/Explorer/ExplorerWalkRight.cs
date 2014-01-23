@@ -34,8 +34,7 @@ namespace PyramidPanic
         public void Initialize()
         {
             this.destinationRect.X = (int)this.explorer.Position.X;
-            this.destinationRect.Y = (int)this.explorer.Position.Y;
-            this.effect = SpriteEffects.None;
+            this.destinationRect.Y = (int)this.explorer.Position.Y;      
         }
 
         public new void Update(GameTime gameTime)
@@ -45,6 +44,7 @@ namespace PyramidPanic
                 this.explorer.State = this.explorer.ExplorerIdle;
                 this.explorer.ExplorerIdle.Initialize();
                 this.explorer.ExplorerIdle.Effect = SpriteEffects.None;
+                this.explorer.ExplorerIdle.Rotation = 0f;
             }
             this.explorer.Position += this.velocity;
             this.destinationRect.X = (int)this.explorer.Position.X;

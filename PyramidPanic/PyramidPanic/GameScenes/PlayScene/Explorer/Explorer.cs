@@ -22,6 +22,8 @@ namespace PyramidPanic
         private ExplorerIdle idle;
         public ExplorerWalkRight walkright;
         public ExplorerWalkLeft walkleft;
+        public ExplorerWalkDown walkdown;
+        public ExplorerWalkUp walkup;
 
         // Properties
         public Vector2 Position
@@ -58,6 +60,14 @@ namespace PyramidPanic
         {
             get { return this.walkleft; }
         }
+        public ExplorerWalkDown WalkDown
+        {
+            get { return this.walkdown; }
+        }
+        public ExplorerWalkUp WalkUp
+        {
+            get { return this.walkup; }
+        }
 
         // Maak de constructor
         public Explorer(PyramidPanic game, Vector2 position, int Speed)
@@ -69,6 +79,8 @@ namespace PyramidPanic
             this.idle = new ExplorerIdle(this);
             this.walkright = new ExplorerWalkRight(this);
             this.walkleft = new ExplorerWalkLeft(this);
+            this.walkdown = new ExplorerWalkDown(this);
+            this.walkup = new ExplorerWalkUp(this);
             this.state = this.idle;
 
         }

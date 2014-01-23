@@ -42,6 +42,7 @@ namespace PyramidPanic
                 this.explorer.State = this.explorer.ExplorerIdle;
                 this.explorer.ExplorerIdle.Initialize();
                 this.explorer.ExplorerIdle.Effect = SpriteEffects.FlipHorizontally;
+                this.explorer.ExplorerIdle.Rotation = 0f;
             }
             this.explorer.Position -= this.velocity;
             this.destinationRect.X = (int)this.explorer.Position.X;
