@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    public class Beetle : IAnimatedSprite 
+    public class Beetle : IAnimatedSprite
     {
         // Fields
         private Vector2 position;
@@ -54,13 +54,13 @@ namespace PyramidPanic
             get { return this.walkUp; }
         }
 
+
         // Maak de constructor
         public Beetle(PyramidPanic game, Vector2 position)
         {
             this.position = position;
             this.game = game;
             this.texture = this.game.Content.Load<Texture2D>(@"level\Beetle");
-            this.state = new WalkDown(this);
             this.walkDown = new WalkDown(this);
             this.walkUp = new WalkUp(this);
             this.state = this.walkDown;

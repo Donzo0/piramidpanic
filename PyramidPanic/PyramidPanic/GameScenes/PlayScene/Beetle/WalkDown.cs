@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -20,10 +20,10 @@ namespace PyramidPanic
 
         // Constructor van deze toestands class krijgt altijd het object mee
         // van de hoofdclass Beetle als argument
-        public WalkDown(Beetle beetle): base(beetle)
+        public WalkDown(Beetle beetle) : base(beetle)
         {
             this.beetle = beetle;
-            this.effect = SpriteEffects.FlipHorizontally;
+            this.effect = SpriteEffects.FlipVertically;
         }
 
         public void Initialize()
@@ -45,9 +45,6 @@ namespace PyramidPanic
 
         public new void Draw(GameTime gameTime)
         {
-            this.beetle.Game.SpriteBatch.Draw(this.beetle.Texture,
-                                              this.beetle.Position,
-                                              Color.White);
             base.Draw(gameTime);
         }
     }

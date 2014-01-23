@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -44,9 +44,6 @@ namespace PyramidPanic
 
         public new void Draw(GameTime gameTime)
         {
-            this.beetle.Game.SpriteBatch.Draw(this.beetle.Texture,
-                                              this.beetle.Position,
-                                              Color.White);
             base.Draw(gameTime);
         }
     }

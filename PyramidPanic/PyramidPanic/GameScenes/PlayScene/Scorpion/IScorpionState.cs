@@ -15,7 +15,7 @@ namespace PyramidPanic
     {
         /* Elke toestandsclass van de Scorpion past de interface IScorpionleState toe (implementeren)
          * Deze interface eist dan van deze toestandsclass dat hij een Update en een Draw method heeft
-         */
+         */        
         void Update(GameTime gameTime);
         void Draw(GameTime gameTime);
     }

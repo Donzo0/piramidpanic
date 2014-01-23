@@ -49,7 +49,7 @@ namespace PyramidPanic
             {
                 this.timer += 1 / 60f;
             }
-
+            
             this.destinationRect.X = (int)this.iAnimatedSprite.Position.X;
             this.destinationRect.Y = (int)this.iAnimatedSprite.Position.Y;
         }

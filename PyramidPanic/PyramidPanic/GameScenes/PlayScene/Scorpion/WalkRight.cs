@@ -20,8 +20,7 @@ namespace PyramidPanic
 
         // Constructor van deze toestands class krijgt altijd het object mee
         // van de hoofdclass Beetle als argument
-        public WalkRight(Scorpion scorpion)
-            : base(scorpion)
+        public WalkRight(Scorpion scorpion) : base(scorpion)
         {
             this.scorpion = scorpion;
             this.effect = SpriteEffects.FlipVertically;
@@ -40,7 +39,7 @@ namespace PyramidPanic
                 this.scorpion.State = this.scorpion.WalkLeft;
                 this.scorpion.WalkLeft.Initialize();
             }
-            this.scorpion.Position += new Vector2(0f, this.scorpion.Speed);
+            this.scorpion.Position += new Vector2(this.scorpion.Speed, 0f);
             base.Update(gameTime);
         }
 

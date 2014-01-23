@@ -18,6 +18,5 @@ namespace PyramidPanic
          */        
         void Update(GameTime gameTime);
         void Draw(GameTime gameTime);
-
     }
 }
