@@ -27,7 +27,7 @@ namespace PyramidPanic
             this.velocity = new Vector2(this.explorer.Speed, 0f);
             this.effect = SpriteEffects.None;
             this.imageNumber = 1;
-            this.sourceRect = new Rectangle(this.imageNumber, 0, 32, 32);
+            this.sourceRect = new Rectangle(this.imageNumber * 32, 0, 32, 32);
         }
 
         public void Initialize()
@@ -38,8 +38,14 @@ namespace PyramidPanic
 
         public new void Update(GameTime gameTime)
         {
-            // base.Update(gameTime) zorgt voor animatie.
-            //base.Update(gameTime);
+            if (Input.LevelDetectKeyDown(Keys.Right))
+            {
+                this.explorer.State = this.explorer.WalkRight;
+            }
+            if (Input.LevelDetectKeyDown(Keys.Left))
+            {
+                this.explorer.State = this.explorer.WalkLeft;
+            }
         }
 
         public new void Draw(GameTime gameTime)

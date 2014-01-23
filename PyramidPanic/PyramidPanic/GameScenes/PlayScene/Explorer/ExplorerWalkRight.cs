@@ -35,12 +35,21 @@ namespace PyramidPanic
         {
             this.destinationRect.X = (int)this.explorer.Position.X;
             this.destinationRect.Y = (int)this.explorer.Position.Y;
+            this.effect = SpriteEffects.None;
         }
 
         public new void Update(GameTime gameTime)
         {
-            // base.Update(gameTime) zorgt voor animatie.
-            //base.Update(gameTime);
+            if (Input.LevelDetectKeyUp(Keys.Right))
+            {
+                this.explorer.State = this.explorer.ExplorerIdle;
+                this.explorer.ExplorerIdle.Initialize();
+            }
+            this.explorer.Position += this.velocity;
+            this.destinationRect.X = (int)this.explorer.Position.X;
+            this.destinationRect.Y = (int)this.explorer.Position.Y;
+            //zorgt voor animatie
+            base.Update(gameTime);
         }
 
         public new void Draw(GameTime gameTime)
