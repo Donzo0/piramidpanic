@@ -26,9 +26,6 @@ namespace PyramidPanic
         {
             this.explorer = explorer;
             this.velocity = new Vector2(this.explorer.Speed, 0f);
-            this.effect = SpriteEffects.None;
-            this.imageNumber = 1;
-            this.sourceRect = new Rectangle(this.imageNumber, 0, 32, 32);
             this.effect = SpriteEffects.FlipHorizontally;
         }
 
@@ -36,7 +33,6 @@ namespace PyramidPanic
         {
             this.destinationRect.X = (int)this.explorer.Position.X;
             this.destinationRect.Y = (int)this.explorer.Position.Y;
-            this.effect = SpriteEffects.None;
         }
 
         public new void Update(GameTime gameTime)
@@ -45,6 +41,7 @@ namespace PyramidPanic
             {
                 this.explorer.State = this.explorer.ExplorerIdle;
                 this.explorer.ExplorerIdle.Initialize();
+                this.explorer.ExplorerIdle.Effect = SpriteEffects.FlipHorizontally;
             }
             this.explorer.Position -= this.velocity;
             this.destinationRect.X = (int)this.explorer.Position.X;

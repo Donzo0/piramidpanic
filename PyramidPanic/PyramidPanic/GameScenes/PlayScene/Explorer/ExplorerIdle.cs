@@ -18,6 +18,11 @@ namespace PyramidPanic
         private Explorer explorer;
         private Vector2 velocity;
 
+        //propety
+        public SpriteEffects Effect
+        {
+            set { this.effect = value; }
+        }
 
         // Constructor van deze toestands class krijgt altijd het object mee
         // van de hoofdclass Explorer als argument
@@ -41,10 +46,12 @@ namespace PyramidPanic
             if (Input.LevelDetectKeyDown(Keys.Right))
             {
                 this.explorer.State = this.explorer.WalkRight;
+                this.explorer.WalkRight.Initialize();
             }
             if (Input.LevelDetectKeyDown(Keys.Left))
             {
                 this.explorer.State = this.explorer.WalkLeft;
+                this.explorer.WalkLeft.Initialize();
             }
         }
 
