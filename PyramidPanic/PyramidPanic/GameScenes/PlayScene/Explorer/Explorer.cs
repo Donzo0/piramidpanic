@@ -19,11 +19,14 @@ namespace PyramidPanic
         private PyramidPanic game;
         private IEntityState state;
         private Texture2D texture;
+
+        // Explorer Fields
         private ExplorerIdle idle;
-        public ExplorerWalkRight walkright;
-        public ExplorerWalkLeft walkleft;
-        public ExplorerWalkDown walkdown;
-        public ExplorerWalkUp walkup;
+        private ExplorerWalkRight walkright;
+        private ExplorerWalkLeft walkleft;
+        private ExplorerWalkDown walkdown;
+        private ExplorerWalkUp walkup;
+
 
         // Properties
         public Vector2 Position
@@ -48,6 +51,8 @@ namespace PyramidPanic
         {
             get { return this.texture; }
         }
+
+        // Explorer Propeties
         public ExplorerIdle ExplorerIdle
         {
             get { return this.idle; }
@@ -76,6 +81,8 @@ namespace PyramidPanic
             this.game = game;
             this.texture = this.game.Content.Load<Texture2D>(@"explorer\Explorer");
             this.speed = speed;
+
+            // Explorer Stuff
             this.idle = new ExplorerIdle(this);
             this.walkright = new ExplorerWalkRight(this);
             this.walkleft = new ExplorerWalkLeft(this);

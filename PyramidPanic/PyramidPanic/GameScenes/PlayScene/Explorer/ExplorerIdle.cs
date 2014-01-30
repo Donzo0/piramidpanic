@@ -43,6 +43,7 @@ namespace PyramidPanic
 
         public new void Update(GameTime gameTime)
         {
+            // Hier worden state gegeven aan een bepaalde key als De key Down is, ook de Initialize van de WalkClasses van expolorer worden geimplemeerd
             if (Input.LevelDetectKeyDown(Keys.Right))
             {
                 this.explorer.State = this.explorer.WalkRight;
@@ -58,11 +59,12 @@ namespace PyramidPanic
                 this.explorer.State = this.explorer.WalkDown;
                 this.explorer.WalkDown.Initialize();
             }
-            if (Input.LevelDetectKeyUp(Keys.Up))
+            if (Input.EdgeDetectKeyDown(Keys.Up))
             {
                 this.explorer.State = this.explorer.WalkUp;
                 this.explorer.WalkUp.Initialize();
             }
+
         }
 
         public new void Draw(GameTime gameTime)

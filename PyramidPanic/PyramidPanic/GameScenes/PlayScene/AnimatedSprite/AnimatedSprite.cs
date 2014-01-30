@@ -41,6 +41,7 @@ namespace PyramidPanic
 
         public void Update(GameTime gameTime)
         {
+            // Hier word animatie gemaakt waardoor het plaatste gaat lopen en bewegend popetje krijgt
             if (this.timer > 5 / 60f)
             {
                 if (this.sourceRect.X < 96)

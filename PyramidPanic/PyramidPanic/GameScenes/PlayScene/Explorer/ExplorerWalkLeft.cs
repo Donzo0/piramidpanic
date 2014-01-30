@@ -26,6 +26,7 @@ namespace PyramidPanic
         {
             this.explorer = explorer;
             this.velocity = new Vector2(this.explorer.Speed, 0f);
+            // Hier word een sprite effect waarmee je de spritebatch kan spiegelen
             this.effect = SpriteEffects.FlipHorizontally;
         }
 
@@ -37,13 +38,18 @@ namespace PyramidPanic
 
         public new void Update(GameTime gameTime)
         {
+            //ifstate voor keydetectUp voor toets left
             if (Input.LevelDetectKeyUp(Keys.Left))
             {
                 this.explorer.State = this.explorer.ExplorerIdle;
+                //hier word de Initialize van ExplorerIdle opgehaald
                 this.explorer.ExplorerIdle.Initialize();
+                // Hier word een sprite effect waarmee je de spritebatch kan spiegelen
                 this.explorer.ExplorerIdle.Effect = SpriteEffects.FlipHorizontally;
+                //Hier word de rotatie waar gemaakt maar hier word er geen gebruik van gemaakt
                 this.explorer.ExplorerIdle.Rotation = 0f;
             }
+            // Hier word er mogelijk gemaakt dat je naar left kan lopen
             this.explorer.Position -= this.velocity;
             this.destinationRect.X = (int)this.explorer.Position.X;
             this.destinationRect.Y = (int)this.explorer.Position.Y;
