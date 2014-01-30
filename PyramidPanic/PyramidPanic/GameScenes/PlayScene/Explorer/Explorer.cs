@@ -15,7 +15,7 @@ namespace PyramidPanic
     {
         // Fields
         private Vector2 position;
-        private int speed = 2;
+        private int speed = 3;
         private PyramidPanic game;
         private IEntityState state;
         private Texture2D texture;
@@ -26,6 +26,7 @@ namespace PyramidPanic
         private ExplorerWalkLeft walkleft;
         private ExplorerWalkDown walkdown;
         private ExplorerWalkUp walkup;
+        private ExplorerIdleWalk idleWalk;
 
 
         // Properties
@@ -73,6 +74,10 @@ namespace PyramidPanic
         {
             get { return this.walkup; }
         }
+        public ExplorerIdleWalk IdleWalk
+        {
+            get { return this.idleWalk; }
+        }
 
         // Maak de constructor
         public Explorer(PyramidPanic game, Vector2 position, int Speed)
@@ -88,6 +93,7 @@ namespace PyramidPanic
             this.walkleft = new ExplorerWalkLeft(this);
             this.walkdown = new ExplorerWalkDown(this);
             this.walkup = new ExplorerWalkUp(this);
+            this.idleWalk = new ExplorerIdleWalk(this);
             this.state = this.idle;
 
         }
