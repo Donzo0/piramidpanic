@@ -28,7 +28,7 @@ namespace PyramidPanic
             this.velocity = new Vector2(0f, this.explorer.Speed);
             // Hier word een sprite effect waarmee je de spritebatch kan spiegelen
             this.effect = SpriteEffects.FlipHorizontally;
-            //Hier geef je rotarion een waarde in contructor
+            //Hier geef je rotation een waarde in contructor
             this.rotation = (float)Math.PI / 2;
         }
 
