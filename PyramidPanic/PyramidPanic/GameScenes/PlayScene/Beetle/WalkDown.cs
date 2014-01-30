@@ -36,7 +36,9 @@ namespace PyramidPanic
 
         public new void Update(GameTime gameTime)
         {
-            if (this.beetle.Position.Y > 480 - 32)
+            
+            // Hier word de waarde naar 460 gezet om niet uit het scherm te komen
+            if (this.beetle.Position.Y > 460 )
             {
                 this.beetle.State = this.beetle.WalkUp;
                 this.beetle.WalkUp.Initialize();

@@ -21,6 +21,7 @@ namespace PyramidPanic
         protected int imageNumber = 0;
         protected float rotation = 0f;
         private Vector2 orgin = new Vector2(16f, 16f);
+        private Vector2 pivot;
 
         //Propeties
         public float Rotation
@@ -37,6 +38,7 @@ namespace PyramidPanic
                                                  32,
                                                  32);
             this.sourceRect = new Rectangle(this.imageNumber, 0, 32, 32);
+            this.pivot = new Vector2(16f, 16f);
         }
 
         public void Update(GameTime gameTime)
@@ -71,7 +73,7 @@ namespace PyramidPanic
                                               this.sourceRect,
                                               Color.White,
                                               this.rotation,
-                                              this.orgin,
+                                              this.pivot,
                                               this.effect,
                                               0f);
         }
