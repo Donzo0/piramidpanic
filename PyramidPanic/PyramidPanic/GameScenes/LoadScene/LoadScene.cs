@@ -34,6 +34,7 @@ namespace PyramidPanic
         //Update
         public void Update(GameTime gameTime)
         {
+            //Hiermee kan je terug naar het startScherm
             if (Input.EdgeDetectKeyDown(Keys.B))
             {
                 this.game.GameState = this.game.StartScene;
@@ -42,6 +43,7 @@ namespace PyramidPanic
         //Draw
         public void Draw(GameTime gameTime)
         {
+            //Achtergrond kleur kan je hier aanpassen
             this.game.GraphicsDevice.Clear(Color.Gray);
         }
     }

@@ -29,7 +29,7 @@ namespace PyramidPanic
         private ExplorerIdleWalk idleWalk;
 
 
-        // Properties
+        // Properties Hier kan je waardes veranderen en mee geven
         public Vector2 Position
         {
             get { return this.position; }
@@ -53,7 +53,7 @@ namespace PyramidPanic
             get { return this.texture; }
         }
 
-        // Explorer Propeties
+        // Explorer Propeties Hier kan je waardes veranderen en mee geven
         public ExplorerIdle ExplorerIdle
         {
             get { return this.idle; }

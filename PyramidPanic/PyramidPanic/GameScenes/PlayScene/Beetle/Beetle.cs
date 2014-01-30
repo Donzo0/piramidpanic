@@ -22,7 +22,7 @@ namespace PyramidPanic
         private WalkUp walkUp;
         private WalkDown walkDown;
 
-        // Properties
+        // Properties Hier kan je waardes veranderen en mee geven
         public Vector2 Position
         {
             get { return this.position; }

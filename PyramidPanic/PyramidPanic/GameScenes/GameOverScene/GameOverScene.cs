@@ -36,6 +36,7 @@ namespace PyramidPanic
         //Update
         public void Update(GameTime gameTime)
         {
+            //Hiermee kan je terug naar het Endscene
             if (Input.EdgeDetectKeyDown(Keys.Right))
             {
                 this.game.GameState = this.game.EndScene;
@@ -45,7 +46,7 @@ namespace PyramidPanic
         //Draw
         public void Draw(GameTime gameTime)
         {
-            //Hier word achtergrond getekent
+            //Achtergrond kleur kan je hier aanpassen
             this.game.GraphicsDevice.Clear(Color.Blue);
         }
     }

@@ -18,7 +18,7 @@ namespace PyramidPanic
         private Explorer explorer;
         private Vector2 velocity;
 
-        //propety
+        //propety Hier kan je waardes veranderen en mee geven
         public SpriteEffects Effect
         {
             set { this.effect = value; }

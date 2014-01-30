@@ -13,6 +13,7 @@ namespace PyramidPanic
 {
     public class Image
     {
+        //Fields
         #region Fields
             //Fields Zijn Private en alleen maar beschikbaar binnen de class
         private Texture2D texture;
@@ -22,6 +23,7 @@ namespace PyramidPanic
         private Color color = Color.FloralWhite;
         #endregion
 
+        //Propeties Hier kan je waardes veranderen en mee geven
         #region Properties
         public Color Color
         { 
@@ -33,6 +35,7 @@ namespace PyramidPanic
         }
         #endregion
 
+        //Contructor
         #region Constructor
             //Constructor
             public Image(PyramidPanic game, String pathNameAsset, Vector2 position)
@@ -47,10 +50,12 @@ namespace PyramidPanic
             }
         #endregion
 
+        //Update
         #region Update
 
         #endregion
 
+        //Draw
         #region Draw
             public void Draw(GameTime gameTime)
             {

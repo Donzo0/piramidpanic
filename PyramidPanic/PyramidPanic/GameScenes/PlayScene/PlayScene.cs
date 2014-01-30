@@ -47,10 +47,12 @@ namespace PyramidPanic
         //Update
         public void Update(GameTime gameTime)
         {
+            //Hiermee kan je terug naar het startScherm
             if (Input.EdgeDetectKeyDown(Keys.B))
             {
                 this.game.GameState = this.game.StartScene;
             }
+            //Hier worden het upgedate anders doen ze niks
             this.beetle.Update(gameTime);
             this.beetle1.Update(gameTime);
             this.scorpion.Update(gameTime);
@@ -61,7 +63,10 @@ namespace PyramidPanic
         //Draw
         public void Draw(GameTime gameTime)
         {
+            //Achtergrond kleur kan je hier aanpassen
             this.game.GraphicsDevice.Clear(Color.Gainsboro);
+
+            //Hier word alles gedrawt
             this.beetle.Draw(gameTime);
             this.beetle1.Draw(gameTime);
             this.scorpion.Draw(gameTime);

@@ -23,7 +23,7 @@ namespace PyramidPanic
         private Vector2 orgin = new Vector2(16f, 16f);
         private Vector2 pivot;
 
-        //Propeties
+        //Propeties Hier kan je waardes veranderen en mee geven
         public float Rotation
         {
             set { this.rotation = value; }

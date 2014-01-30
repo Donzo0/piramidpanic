@@ -36,16 +36,18 @@ namespace PyramidPanic
         //Update
         public void Update(GameTime gameTime)
         {
+            // Als de timer afgelopen is sluit het spel af
             if (timer >= 50)
             {
                 this.game.Exit();
             }
-             timer++;
+            //Hier word timer opgehoogd
+            timer++;
         }
         //Draw
         public void Draw(GameTime gameTime)
         {
-            //Hier word achtergrond getekent
+            //Achtergrond kleur kan je hier aanpassen
             this.game.GraphicsDevice.Clear(Color.PapayaWhip);
         }
     }
