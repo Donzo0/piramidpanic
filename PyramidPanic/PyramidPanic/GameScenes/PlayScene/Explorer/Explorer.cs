@@ -86,8 +86,8 @@ namespace PyramidPanic
             this.game = game;
             this.texture = this.game.Content.Load<Texture2D>(@"explorer\Explorer");
             this.speed = speed;
-
-            // Explorer Stuff
+            
+            // Explorer Stuff hier word alles opgeroepen van classes
             this.idle = new ExplorerIdle(this);
             this.walkright = new ExplorerWalkRight(this);
             this.walkleft = new ExplorerWalkLeft(this);

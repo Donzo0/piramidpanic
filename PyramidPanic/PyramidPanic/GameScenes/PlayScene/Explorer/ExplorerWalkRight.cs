@@ -46,7 +46,8 @@ namespace PyramidPanic
             this.destinationRect.X = (int)this.explorer.Position.X;
             this.destinationRect.Y = (int)this.explorer.Position.Y;
 
-            if (this.explorer.Position.X > 620)
+            // hier word mogelijk gemaakt dat hij niet door de rand heen kan lopen en niet naar de verkeerde kant kijkt
+            if (this.explorer.Position.X > 624)
             {
                 this.explorer.Position -= this.velocity;
                 this.explorer.State = this.explorer.IdleWalk;

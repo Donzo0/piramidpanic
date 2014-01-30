@@ -41,6 +41,21 @@ namespace PyramidPanic
 
         public new void Update(GameTime gameTime)
         {
+            // Hier word er mogelijk gemaakt dat je naar beneden kan lopen
+            this.explorer.Position -= this.velocity;
+            this.destinationRect.X = (int)this.explorer.Position.X;
+            this.destinationRect.Y = (int)this.explorer.Position.Y;
+
+            // hier word mogelijk gemaakt dat hij niet door de rand heen kan lopen en niet naar de verkeerde kant kijkt
+            if (this.explorer.Position.Y < 16)
+            {
+                this.explorer.Position += this.velocity;
+                this.explorer.State = this.explorer.IdleWalk;
+                this.explorer.IdleWalk.Initialize();
+                this.explorer.IdleWalk.Effect = SpriteEffects.FlipHorizontally;
+                this.explorer.IdleWalk.Rotation = (float)Math.PI / 2;
+            }
+
             //ifstate voor keydetectUp voor toets Up
             if (Input.LevelDetectKeyUp(Keys.Up))
             {
@@ -52,11 +67,6 @@ namespace PyramidPanic
                 //Hier word de rotatie waar gemaakt
                 this.explorer.ExplorerIdle.Rotation = (float)Math.PI / 2;
             }
-            // Hier word er mogelijk gemaakt dat je naar beneden kan lopen
-            this.explorer.Position -= this.velocity;
-            this.destinationRect.X = (int)this.explorer.Position.X;
-            this.destinationRect.Y = (int)this.explorer.Position.Y;
-
             //zorgt voor animatie
             base.Update(gameTime);
         }
