@@ -19,6 +19,7 @@ namespace PyramidPanic
         private Scorpion scorpion, scorpion1;
         private Explorer explorer;
         private Level level;
+        private Image bg;
 
         //Constructor
         public PlayScene(PyramidPanic game)
@@ -43,6 +44,7 @@ namespace PyramidPanic
             this.scorpion1 = new Scorpion(this.game, new Vector2(200f, 250f), 2);
             this.explorer = new Explorer(this.game, new Vector2(200f, 200f), 4);
             this.level = new Level(this.game, 0);
+            this.bg = new Image(this.game, @"level\Background2", new Vector2(0f, 0f));
         }
 
 
@@ -69,11 +71,13 @@ namespace PyramidPanic
             this.game.GraphicsDevice.Clear(Color.Gainsboro);
 
             //Hier word alles gedrawt
+            this.bg.Draw(gameTime);
             this.beetle.Draw(gameTime);
             this.beetle1.Draw(gameTime);
             this.scorpion.Draw(gameTime);
             this.scorpion1.Draw(gameTime);
             this.explorer.Draw(gameTime);
+            this.level.Draw(gameTime);
 
         }
 

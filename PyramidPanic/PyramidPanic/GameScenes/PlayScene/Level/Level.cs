@@ -20,6 +20,7 @@ namespace PyramidPanic
         private PyramidPanic game;
         private Stream stream;
         private List<String> lines;
+        private Block[,] blocks;
 
         //Propeties
         public int LevelIndex
@@ -46,6 +47,17 @@ namespace PyramidPanic
         //Update
 
         //Draw
+        public void Draw(GameTime gameTime)
+        {
+            // Het blocks-array wordt getekend
+            for (int row = 0; row < this.blocks.GetLength(1); row++)
+            {
+                for (int column = 0; column < this.blocks.GetLength(0); column++)
+                {
+                    this.blocks[column, row].Draw(gameTime);
+                }
+            }
+        }
 
         private void LoadAssets()
         {
@@ -57,9 +69,9 @@ namespace PyramidPanic
             String line = reader.ReadLine();
             // bepaal hoeveel tekens een regel is(blijkt 20 te zijn)
             int lineWidth = line.Length;
-
+            
             // de while lus leest alle regels uit het tekstbestand en zet deze in de list<String> this.lines
-            while (lines != null)
+            while (line != null)
             {
                 // stop de uitgelezen regel in de List<String> tgis.lines
                 this.lines.Add(line);
@@ -67,16 +79,56 @@ namespace PyramidPanic
                 line = reader.ReadLine();
 
             }
-
+            
             // bepaal uit hoeveel regels het bestand bestaat
             int amountOfLines = this.lines.Count;
 
-            foreach (String lineInText in this.lines)
-            {
-                Console.WriteLine(amountOfLines);
-            }
-            Console.WriteLine(amountOfLines);
+            // vernietigt reader object
+            reader.Close();
 
+            // vernietigt stream object
+            this.stream.Close();
+
+            // dit tweedimensionale array bevat block-object
+            this.blocks = new Block[lineWidth, amountOfLines];
+
+            for (int row = 0; row < amountOfLines; row++)
+            { 
+                for (int column = 0;column < lineWidth; column++)
+                {
+                    //we lezen iedere letter uit de lines-list uit in een char variable
+                    char blockElement = this.lines[row][column];
+                    this.blocks[column, row] = this.LoadBlock(blockElement, column * 32, row * 32);
+                }
+            }
+            
+        }
+
+        public Block LoadBlock(char blockElement, int x, int y)
+        {
+            switch (blockElement)
+            {
+                case 'x':
+                    return new Block(this.game, @"level\Block", new Vector2(x, y));
+                case '.':
+                    return new Block(this.game, @"Level\Transparant", new Vector2(x, y));
+                case 'a':
+                    return new Block(this.game, @"Level\Block_vert", new Vector2(x, y));
+                case 'b':
+                    return new Block(this.game, @"Level\Block_hor", new Vector2(x, y));
+                case 'd':
+                    return new Block(this.game, @"Level\Door", new Vector2(x, y));
+                case 't':
+                    return new Block(this.game, @"Level\Treasure1", new Vector2(x, y));
+                case 'T':
+                    return new Block(this.game, @"Level\Treasure2", new Vector2(x, y));
+                case 'w':
+                    return new Block(this.game, @"Level\Wall1", new Vector2(x, y));
+                case 'W':
+                    return new Block(this.game, @"Level\Wall2", new Vector2(x, y));
+                default:
+                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y));
+            }
         }
     }
 }
