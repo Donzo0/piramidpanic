@@ -22,6 +22,7 @@ namespace PyramidPanic
         private List<String> lines;
         private Block[,] blocks;
         private Explorer explorer;
+        private List<Scorpion> scorpions;
 
         //Propeties
         public int LevelIndex
@@ -48,6 +49,12 @@ namespace PyramidPanic
         //Update
         public void Update(GameTime gameTime)
         { 
+            // we roepen de Update-method aan van de Scorpion-object
+            foreach (Scorpion scorpions in this.scorpions)
+            {
+                scorpions.Update(gameTime);
+            }
+
             // we roepen de Update method aan van de explorer zodat hij gaat bewegen
             this.explorer.Update(gameTime);
         }
@@ -55,6 +62,12 @@ namespace PyramidPanic
         //Draw
         public void Draw(GameTime gameTime)
         {
+
+            // we roepen de draw-method aan van de Scorpion-object
+            foreach (Scorpion scorpions in this.scorpions)
+            {
+                scorpions.Draw(gameTime);
+            }
 
             // Het blocks-array wordt getekend
             for (int row = 0; row < this.blocks.GetLength(1); row++)
@@ -71,6 +84,9 @@ namespace PyramidPanic
 
         private void LoadAssets()
         {
+            // List voor Scorpion
+            this.scorpions = new List<Scorpion>();
+
             //Deze list van strings slaat elke regel van 0.txt
             this.lines = new List<string>();
             //StreamReader kan lezen wat er in het textobject staat
@@ -120,6 +136,9 @@ namespace PyramidPanic
             {
                 case 'E':
                     this.explorer = new Explorer(this.game, new Vector2(x + 16, y + 16), 0);
+                    return new Block(this.game, @"level\Transparant", new Vector2(x, y));
+                case 's':
+                    this.scorpions.Add(new Scorpion(this.game, new Vector2(x + 16, y + 16), 1));
                     return new Block(this.game, @"level\Transparant", new Vector2(x, y));
                 case 'x':
                     return new Block(this.game, @"level\Block", new Vector2(x, y));
