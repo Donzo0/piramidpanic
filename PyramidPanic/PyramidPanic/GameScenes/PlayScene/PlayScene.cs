@@ -18,6 +18,7 @@ namespace PyramidPanic
         private Beetle beetle, beetle1;
         private Scorpion scorpion, scorpion1;
         private Explorer explorer;
+        private Level level;
 
         //Constructor
         public PlayScene(PyramidPanic game)
@@ -41,6 +42,7 @@ namespace PyramidPanic
             this.scorpion = new Scorpion(this.game, new Vector2(100f, 300f), 2);
             this.scorpion1 = new Scorpion(this.game, new Vector2(200f, 250f), 2);
             this.explorer = new Explorer(this.game, new Vector2(200f, 200f), 4);
+            this.level = new Level(this.game, 0);
         }
 
 

@@ -5,7 +5,7 @@
     <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PyramidPanic</RootNamespace>
     <AssemblyName>PyramidPanic</AssemblyName>
@@ -60,6 +60,9 @@
     <PlatformTarget>x86</PlatformTarget>
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <Private>False</Private>
@@ -111,8 +114,8 @@
     <Compile Include="GameScenes\EndScene\EndScene.cs" />
     <Compile Include="GameScenes\GameOverScene\GameOverScene.cs" />
     <Compile Include="GameScenes\HelperClasses\Image.cs" />
-    <Compile Include="GameScenes\HelpScene\HelpScene.cs" />
-    <Compile Include="GameScenes\HelpScene\ToetsScene.cs" />
+    <Compile Include="GameScenes\LoadScene\HelpScene\HelpScene.cs" />
+    <Compile Include="GameScenes\LoadScene\HelpScene\ToetsScene.cs" />
     <Compile Include="GameScenes\LoadScene\LoadScene.cs" />
     <Compile Include="GameScenes\PlayScene\AnimatedSprite\AnimatedSprite.cs" />
     <Compile Include="GameScenes\PlayScene\AnimatedSprite\IAnimatedSprite.cs" />
@@ -127,6 +130,7 @@
     <Compile Include="GameScenes\PlayScene\IEntityState.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\WalkDown.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\WalkUp.cs" />
+    <Compile Include="GameScenes\PlayScene\Level\Level.cs" />
     <Compile Include="GameScenes\PlayScene\PlayScene.cs" />
     <Compile Include="GameScenes\PlayScene\Scorpion\Scorpion.cs" />
     <Compile Include="GameScenes\PlayScene\Scorpion\WalkLeft.cs" />
