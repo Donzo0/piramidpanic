@@ -17,7 +17,6 @@ namespace PyramidPanic
         private PyramidPanic game;
         private Beetle beetle, beetle1;
         private Scorpion scorpion, scorpion1;
-        private Explorer explorer;
         private Level level;
         private Image bg;
 
@@ -42,7 +41,6 @@ namespace PyramidPanic
             this.beetle1 = new Beetle(this.game, new Vector2(50f, 200f), 2);
             this.scorpion = new Scorpion(this.game, new Vector2(100f, 300f), 2);
             this.scorpion1 = new Scorpion(this.game, new Vector2(200f, 250f), 2);
-            this.explorer = new Explorer(this.game, new Vector2(200f, 200f), 4);
             this.level = new Level(this.game, 0);
             this.bg = new Image(this.game, @"level\Background2", new Vector2(0f, 0f));
         }
@@ -61,7 +59,7 @@ namespace PyramidPanic
             this.beetle1.Update(gameTime);
             this.scorpion.Update(gameTime);
             this.scorpion1.Update(gameTime);
-            this.explorer.Update(gameTime);
+            this.level.Update(gameTime);
         }
         
         //Draw
@@ -76,7 +74,6 @@ namespace PyramidPanic
             this.beetle1.Draw(gameTime);
             this.scorpion.Draw(gameTime);
             this.scorpion1.Draw(gameTime);
-            this.explorer.Draw(gameTime);
             this.level.Draw(gameTime);
 
         }

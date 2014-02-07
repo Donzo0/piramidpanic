@@ -21,6 +21,7 @@ namespace PyramidPanic
         private Stream stream;
         private List<String> lines;
         private Block[,] blocks;
+        private Explorer explorer;
 
         //Propeties
         public int LevelIndex
@@ -45,10 +46,16 @@ namespace PyramidPanic
             this.LoadAssets();
         }
         //Update
+        public void Update(GameTime gameTime)
+        { 
+            // we roepen de Update method aan van de explorer zodat hij gaat bewegen
+            this.explorer.Update(gameTime);
+        }
 
         //Draw
         public void Draw(GameTime gameTime)
         {
+
             // Het blocks-array wordt getekend
             for (int row = 0; row < this.blocks.GetLength(1); row++)
             {
@@ -57,6 +64,9 @@ namespace PyramidPanic
                     this.blocks[column, row].Draw(gameTime);
                 }
             }
+
+            // de explorer wordt getekend
+            this.explorer.Draw(gameTime);
         }
 
         private void LoadAssets()
@@ -108,6 +118,9 @@ namespace PyramidPanic
         {
             switch (blockElement)
             {
+                case 'E':
+                    this.explorer = new Explorer(this.game, new Vector2(x + 16, y + 16), 0);
+                    return new Block(this.game, @"level\Transparant", new Vector2(x, y));
                 case 'x':
                     return new Block(this.game, @"level\Block", new Vector2(x, y));
                 case '.':
