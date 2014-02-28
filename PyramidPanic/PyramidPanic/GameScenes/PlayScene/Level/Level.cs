@@ -26,6 +26,8 @@ namespace PyramidPanic
         private List<Scorpion> scorpions;
         // In deze list worden de beetles opgeslagen
         private List<Beetle> beetles;
+        // In deze list worden de Treasure opgeslagen
+        private List<Image> treasures;
 
         //Propeties
         public int LevelIndex
@@ -64,6 +66,7 @@ namespace PyramidPanic
                 beetle.Update(gameTime);
             }
 
+
             // we roepen de Update method aan van de explorer zodat hij gaat bewegen
             this.explorer.Update(gameTime);
         }
@@ -82,6 +85,12 @@ namespace PyramidPanic
             foreach (Beetle beetle in this.beetles)
             {
                 beetle.Draw(gameTime);
+            }
+
+            // We roepen deDraw-method aan van de treasure-class
+            foreach (Image treasure in this.treasures)
+            {
+                treasure.Draw(gameTime);
             }
 
             // Het blocks-array wordt getekend
@@ -105,6 +114,9 @@ namespace PyramidPanic
 
             // Maak een list<Beetle> waarin we beetle-objecten in kunnen opslaan
             this.beetles = new List<Beetle>();
+
+            // Maak een list<Image> waarin we de treasures in op kunnen slaan.
+            this.treasures = new List<Image>();
 
             //Deze list van strings slaat elke regel van 0.txt
             this.lines = new List<string>();
@@ -181,6 +193,18 @@ namespace PyramidPanic
                     return new Block(this.game, @"Level\Wall1", new Vector2(x, y));
                 case 'W':
                     return new Block(this.game, @"Level\Wall2", new Vector2(x, y));
+                case 'c':
+                    this.treasures.Add(new Image(this.game, @"Treasures\Cat", new Vector2(x, y)));
+                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y));
+                case 'A':
+                    this.treasures.Add(new Image(this.game, @"Treasures\Ankh", new Vector2(x, y)));
+                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y));
+                case 'S':
+                    this.treasures.Add(new Image(this.game, @"Treasures\Scarab", new Vector2(x, y)));
+                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y));
+                case 'p':
+                    this.treasures.Add(new Image(this.game, @"Treasures\potion", new Vector2(x, y)));
+                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y));
                 default:
                     return new Block(this.game, @"Block\Transparant", new Vector2(x, y));
             }
