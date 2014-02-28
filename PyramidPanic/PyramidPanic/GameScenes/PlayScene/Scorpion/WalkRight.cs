@@ -37,7 +37,7 @@ namespace PyramidPanic
         public new void Update(GameTime gameTime)
         {
             // Hier word de waarde naar 620 gezet om niet uit het scherm te komen
-            if (this.scorpion.Position.X > 620)
+            if (this.scorpion.Position.X > this.scorpion.RightBorder)
             {
                 this.scorpion.State = this.scorpion.WalkLeft;
                 this.scorpion.WalkLeft.Initialize();

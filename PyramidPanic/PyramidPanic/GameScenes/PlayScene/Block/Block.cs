@@ -14,20 +14,25 @@ namespace PyramidPanic
     public class Block : Image
     {
         //Fields
+        private bool passable;
 
         //Properties
+        public bool Passable
+        {
+            get { return passable; }
+        }
 
         //Constructor
-        public Block(PyramidPanic game, string pathNameAsset, Vector2 position)
+        public Block(PyramidPanic game, string pathNameAsset, Vector2 position, bool passable)
             : base(game, pathNameAsset, position)
         {
-
+            this.passable = passable;
         }
 
         //Update
 
         //Draw
-        public void Draw(GameTime gameTime)
+        public new void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
         }
