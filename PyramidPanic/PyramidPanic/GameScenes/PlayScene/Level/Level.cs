@@ -22,7 +22,10 @@ namespace PyramidPanic
         private List<String> lines;
         private Block[,] blocks;
         private Explorer explorer;
+        // In deze list worden de scorpion opgeslagen
         private List<Scorpion> scorpions;
+        // In deze list worden de beetles opgeslagen
+        private List<Beetle> beetles;
 
         //Propeties
         public int LevelIndex
@@ -55,6 +58,12 @@ namespace PyramidPanic
                 scorpions.Update(gameTime);
             }
 
+            // We roepen de Update-method aan van de Beetle-class
+            foreach (Beetle beetle in this.beetles)
+            {
+                beetle.Update(gameTime);
+            }
+
             // we roepen de Update method aan van de explorer zodat hij gaat bewegen
             this.explorer.Update(gameTime);
         }
@@ -67,6 +76,12 @@ namespace PyramidPanic
             foreach (Scorpion scorpions in this.scorpions)
             {
                 scorpions.Draw(gameTime);
+            }
+
+            // we roepen de draw-method aan van de Scorpion-object
+            foreach (Beetle beetle in this.beetles)
+            {
+                beetle.Draw(gameTime);
             }
 
             // Het blocks-array wordt getekend
@@ -86,6 +101,10 @@ namespace PyramidPanic
         {
             // List voor Scorpion
             this.scorpions = new List<Scorpion>();
+
+
+            // Maak een list<Beetle> waarin we beetle-objecten in kunnen opslaan
+            this.beetles = new List<Beetle>();
 
             //Deze list van strings slaat elke regel van 0.txt
             this.lines = new List<string>();
@@ -140,13 +159,17 @@ namespace PyramidPanic
                 case 's':
                     this.scorpions.Add(new Scorpion(this.game, new Vector2(x + 16, y + 16), 1));
                     return new Block(this.game, @"level\Transparant", new Vector2(x, y));
+                
+                case 'b':
+                    this.beetles.Add(new Beetle(this.game, new Vector2(x + 16f, y + 16f), 1));
+                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y));   
                 case 'x':
                     return new Block(this.game, @"level\Block", new Vector2(x, y));
                 case '.':
                     return new Block(this.game, @"Level\Transparant", new Vector2(x, y));
                 case 'a':
                     return new Block(this.game, @"Level\Block_vert", new Vector2(x, y));
-                case 'b':
+                case 'B':
                     return new Block(this.game, @"Level\Block_hor", new Vector2(x, y));
                 case 'd':
                     return new Block(this.game, @"Level\Door", new Vector2(x, y));
