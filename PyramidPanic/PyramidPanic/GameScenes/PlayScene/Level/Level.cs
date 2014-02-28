@@ -40,6 +40,12 @@ namespace PyramidPanic
         {
             get { return this.scorpions; }
         }
+
+        public List<Beetle> Beetles
+        {
+            get { return this.beetles; }
+        }
+
         public Block[,] Blocks
         {
             get { return this.blocks; }
@@ -169,7 +175,8 @@ namespace PyramidPanic
             }
 
             //Manager.level
-            
+            ScorpionManager.Level = this;
+            BeetleManager.Level = this;
         }
 
         public Block LoadBlock(char blockElement, int x, int y)
@@ -185,7 +192,7 @@ namespace PyramidPanic
                 
                 case 'b':
                     this.beetles.Add(new Beetle(this.game, new Vector2(x + 16f, y + 16f), 1));
-                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y), true);   
+                    return new Block(this.game, @"level\Transparant", new Vector2(x, y), true);   
                 case 'x':
                     return new Block(this.game, @"level\Block", new Vector2(x, y), true);
                 case '.':
@@ -205,19 +212,19 @@ namespace PyramidPanic
                 case 'W':
                     return new Block(this.game, @"Level\Wall2", new Vector2(x, y), true);
                 case 'c':
-                    this.treasures.Add(new Image(this.game, @"Treasures\Cat", new Vector2(x, y)));
-                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y), true);
+                    this.treasures.Add(new Image(this.game, @"level\Cat", new Vector2(x, y)));
+                    return new Block(this.game, @"level\Transparant", new Vector2(x, y), true);
                 case 'A':
                     this.treasures.Add(new Image(this.game, @"Treasures\Ankh", new Vector2(x, y)));
-                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y), true);
+                    return new Block(this.game, @"level\Transparant", new Vector2(x, y), true);
                 case 'S':
                     this.treasures.Add(new Image(this.game, @"Treasures\Scarab", new Vector2(x, y)));
-                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y), true);
+                    return new Block(this.game, @"level\Transparant", new Vector2(x, y), true);
                 case 'p':
                     this.treasures.Add(new Image(this.game, @"Treasures\potion", new Vector2(x, y)));
-                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y), true);
+                    return new Block(this.game, @"level\Transparant", new Vector2(x, y), true);
                 default:
-                    return new Block(this.game, @"Block\Transparant", new Vector2(x, y), true);
+                    return new Block(this.game, @"level\Transparant", new Vector2(x, y), true);
             }
         }
     }

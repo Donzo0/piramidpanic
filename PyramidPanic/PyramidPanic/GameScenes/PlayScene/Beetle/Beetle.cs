@@ -21,6 +21,8 @@ namespace PyramidPanic
         private Texture2D texture;
         private WalkUp walkUp;
         private WalkDown walkDown;
+        private int bottomBorder;
+        private int topBorder;
 
         // Properties Hier kan je waardes veranderen en mee geven
         public Vector2 Position
@@ -53,7 +55,16 @@ namespace PyramidPanic
         {
             get { return this.walkUp; }
         }
-
+        public int BottomBorder
+        {
+            get { return this.bottomBorder; }
+            set { this.bottomBorder = value; }
+        }
+        public int TopBorder
+        {
+            get { return this.topBorder; }
+            set { this.topBorder = value; }
+        }
 
         // Maak de constructor
         public Beetle(PyramidPanic game, Vector2 position, int Speed)

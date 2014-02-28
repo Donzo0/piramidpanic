@@ -38,7 +38,7 @@ namespace PyramidPanic
         {
             
             // Hier word de waarde naar 460 gezet om niet uit het scherm te komen
-            if (this.beetle.Position.Y > 460 )
+            if (this.beetle.Position.Y > this.beetle.BottomBorder )
             {
                 this.beetle.State = this.beetle.WalkUp;
                 this.beetle.WalkUp.Initialize();

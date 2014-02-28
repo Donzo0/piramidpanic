@@ -37,7 +37,7 @@ namespace PyramidPanic
         public new void Update(GameTime gameTime)
         {
             // Hier word de waarde naar 20 gezet om niet uit het scherm te komen
-            if (this.beetle.Position.Y < 20)
+            if (this.beetle.Position.Y < this.beetle.TopBorder)
             {
                 this.beetle.State = this.beetle.WalkDown;
                 this.beetle.WalkDown.Initialize();

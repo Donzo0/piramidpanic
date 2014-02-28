@@ -24,7 +24,6 @@ namespace PyramidPanic
         private int rightBorder;
         private int leftBorder;
         private Rectangle collisionRect;
-        private Texture2D colText;
 
         // Properties Hier kan je waardes veranderen en mee geven
         public int RightBorder
@@ -87,7 +86,6 @@ namespace PyramidPanic
                                    (int)this.position.Y - 16,
                                    32,
                                    32);
-            this.colText = game.Content.Load<Texture2D>(@"Scorpion\CollisionText");
             this.texture = this.game.Content.Load<Texture2D>(@"level\Scorpion");
             this.speed = speed;
             this.walkRight = new WalkRight(this);
@@ -101,8 +99,7 @@ namespace PyramidPanic
         }
 
         public void Draw(GameTime gameTime)
-        {
-            // this.game.SpriteBatch.Draw(this.colText, this.CollisionRect, Color.Black); 
+        { 
             this.state.Draw(gameTime);
         }
     }
